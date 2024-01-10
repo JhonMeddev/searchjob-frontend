@@ -1,0 +1,51 @@
+<div class="container-fluid vh-100 register">
+  <div class="row text-center" style="padding-top: 10%;">
+    <div class="col-md-6">
+      <section class="vh-40">
+        <div class="container py-2 h-80">
+          <div class="row d-flex justify-content-left align-items-center h-80">
+            <div class="col-12 mt-5 mb-5">
+              <div class="card shadow-2-strong rounded">
+                <div class="card-body px-5 text-center py-1 bg">
+
+                  <h3 class="mb-1 mt-4 text-info col-md-12">CADASTRO</h3>
+
+                  <div class="form-group" style='text-align:left'>
+                    <label class="text-white" for="name">Nome:</label>
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Seu Nome">
+                  </div>
+
+                  <div class="form-group" style='text-align:left'>
+                    <label class="text-white" for="email">Usuário:</label>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="Digite um E-mail Válido">
+                  </div>
+
+                  <div class="form-group" style='text-align:left'>
+                    <label class="text-white" for="password">Senha:</label>
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Sua senha">
+                  </div>
+
+                  <div class="form-group" style='text-align:left'>
+                    <label class="text-white" for="confirmsenha">Confirmar Senha:</label>
+                    <input class="form-control" type="password" name="confirmsenha" id="confirmsenha" placeholder="Confirme sua senha">
+                  </div>
+
+                  <hr class="my-2">
+
+                  <button class="btn btn-info btn-lg m-4" type="submit">Cadastrar</button>
+                  <button class="btn btn-danger btn-lg m-4" routerLink='/login'>Cancelar</button>
+
+                  <hr class="my-2">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="img col-md-6" id="img-bg">
+      <img src="assets/register.png" alt="Imagem Login" width="600" height="600" />
+    </div>
+  </div>
+</div>
