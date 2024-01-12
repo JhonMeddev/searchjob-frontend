@@ -1,4 +1,4 @@
-<div class="html d-flex vh-100">
+<div class="html d-flex vh-100" id="home">
   <div class="container body">
     <div class="container">
       <div class="container justify-content-center mt-5" id="postagens">
@@ -14,27 +14,22 @@
               <input class="form-control mr-sm-2 w-50 mb-5 rounded-pill" type="search" placeholder="Pesquisar Vagas" aria-label="Search">
             </div>
 
-            <div class="card mt-3 bg-user1">
+            <div class="card mt-3" *ngFor='let item of listVaga'>
               <div class="row ml-0 mb-0 mt-0">
                 <div class="col-md-2 p-0 h-25 ml-0 rounded bg-user">
-                  <div class="row img-profile-post">
-                    <img src="" alt="perfil" class="img-fluid img-profile float-left rounded mt-2 border border-white w-50 h-50">
-                  </div>
 
-                  <div class="row mt-2 justify-content-start">
-                    <p class="card-text text-uppercase user-name border-bottom">username :</p>
+                  <div class="row mt-2 justify-content-start m-5">
+                    <p class="p-0">Empresa : </p>
+                    <p class="card-text text-uppercase user-name border-bottom"><strong>{{item.anunciante.name}}</strong></p>
                   </div>
                 </div>
 
                 <div class="border-info border-bottom col-md-9 mr-0 mb-2 ml-0 p-0 mt-2">
-                  <h5 class="card-title text-left text-uppercase mt-2 mb-0 f-title text-info">titulo</h5>
-                  <p class="text-left mt-0 f-tema"><small>Tema: </small></p>
+                  <h5 class="card-title text-left text-uppercase mt-2 mb-0 f-title text-info">{{item.titulo}}</h5>
 
-                  <img class="col-md-12 img-fluid" src="" alt="Imagem da publicação">
+                  <p class="col-md-12 card-text text-justify">{{item.descricao}}</p>
 
-                  <p class="col-md-12 card-text text-justify">texto</p>
-
-                  <p class="card-text"><small>data</small></p>
+                  <p class="card-text"><small>Data do anuncio : {{item.data}}</small></p>
                 </div>
               </div>
             </div>

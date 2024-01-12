@@ -1,24 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { VagaModel } from '../model/VagaModel';
+import { UserModel } from '../model/UserModel';
+import { environment } from '../environments/environment.prod';
+import { UsuarioLogin } from '../model/UsuarioLogin';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import { VagaService } from '../service/vaga.service';
 import { AlertsService } from '../service/alerts.service';
-import { UserModel } from '../model/UserModel';
-import { environment } from '../environments/environment.prod';
-import { UsuarioLogin } from '../model/UsuarioLogin';
-
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  selector: 'app-my-posts',
+  templateUrl: './my-posts.component.html',
+  styleUrl: './my-posts.component.css'
 })
-export class HomeComponent implements OnInit {
-
+export class MyPostsComponent {
 
   vaga: VagaModel = new VagaModel();
-  listVaga: VagaModel[];
+  listVagasUser: VagaModel[];
   titleVaga: string
 
   user: UserModel = new UserModel();
@@ -39,15 +37,20 @@ export class HomeComponent implements OnInit {
 
     this.vagaService.refreshToken()
     this.authService.refreshToken()
-    this.getAllVagas()
+    this.getAllVagasUser(this.idUser)
 
   }
 
-  getAllVagas() {
-    this.vagaService.getAllVagas().subscribe((resp: VagaModel[]) => {
-      this.listVaga = resp;
+  getAllVagasUser(idUser: number) {
+    this.vagaService.getVagasByIdUser(idUser).subscribe((resp: VagaModel[]) => {
+      this.listVagasUser = resp;
     });
   }
-  
-  
+
+  apagarVaga(id: number): void{
+
+    console.log(`Excluir item com ID: ${id}`);
+
+  }
+
 }

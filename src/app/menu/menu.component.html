@@ -9,7 +9,10 @@
           <a class="nav-link text-info" routerLink='/home'>Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-info" routerLink='/login'>Login</a>
+          <a class="nav-link text-info" routerLink='/login' *ngIf="!authService.logado()">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-info" routerLink='/home' *ngIf="authService.logado()">Sair</a>
         </li>
       </ul>
     </div>

@@ -8,6 +8,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { AlertsComponent } from './alerts/alerts.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { MenuUserComponent } from './menu-user/menu-user.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
+import { ConfirmationComponent } from './alerts/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +24,23 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    FooterComponent
+    FooterComponent,
+    AlertsComponent,
+    MenuUserComponent,
+    MyPostsComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [{
+    provide : LocationStrategy,
+    useClass : HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
