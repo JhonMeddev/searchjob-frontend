@@ -1,4 +1,4 @@
-<div class="html d-flex vh-100" id="home">
+<div class="html d-flex pb-5" id="home">
   <div class="container body">
     <div class="container">
       <div class="container justify-content-center mt-5" id="postagens">
@@ -11,7 +11,7 @@
         <div class="tab-content mt-5" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
             <div class="d-flex justify-content-center w-100">
-              <input class="form-control mr-sm-2 w-50 mb-5 rounded-pill" type="search" placeholder="Pesquisar Vagas" aria-label="Search">
+              <input [(ngModel)]="titleVaga" (keyup)="findByTitle()" class="form-control mr-sm-2 w-50 mb-5 rounded-pill" type="search" placeholder="Pesquisar Vagas" aria-label="Search">
             </div>
 
             <div class="card mt-3" *ngFor='let item of listVaga'>

@@ -30,4 +30,24 @@ export class VagaService {
     return this.http.get<VagaModel[]>(`http://localhost:8080/vaga/mypost/${id}`)
   }
 
+  postVaga(vaga: VagaModel): Observable<VagaModel>{
+    return this.http.post<VagaModel>('http://localhost:8080/vaga/', vaga, this.token)
+  }
+
+  deleteVaga(id: number){
+    return this.http.delete(`http://localhost:8080/vaga/${id}`, this.token)
+  }
+
+  getVagaById(id: number): Observable<VagaModel>{
+    return this.http.get<VagaModel>(`http://localhost:8080/vaga/${id}`, this.token)
+  }
+
+  editVaga(vaga: VagaModel): Observable<VagaModel>{
+    return this.http.put<VagaModel>(`http://localhost:8080/vaga/`, vaga, this.token)
+  }
+
+  getVagasByTitulo(titulo: string): Observable<VagaModel[]>{
+    return this.http.get<VagaModel[]>(`http://localhost:8080/vaga/title/${titulo}`)
+  }
+
 }

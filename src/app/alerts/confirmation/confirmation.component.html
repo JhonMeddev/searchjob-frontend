@@ -1,6 +1,6 @@
 <div class="modal-header">
   <h4 class="modal-title">Confirmação</h4>
-  <button type="button" class="close" aria-label="Close" (click)="onClose(false)">
+  <button type="button" class="close" aria-label="Close" (click)="onCloseClick(false)">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
@@ -8,6 +8,6 @@
   <p>{{ message }}</p>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-secondary" (click)="onClose(false)">Não</button>
+  <button type="button" class="btn btn-secondary" (click)="onCloseClick(false)">Não</button>
   <button type="button" class="btn btn-primary" (click)="onCloseClick(true)">Sim</button>
 </div>

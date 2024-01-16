@@ -49,5 +49,16 @@ export class HomeComponent implements OnInit {
     });
   }
   
+
+  findByTitle(){
+
+    if(this.titleVaga == ''){
+      this.getAllVagas()
+    }else{
+      this.vagaService.getVagasByTitulo(this.titleVaga).subscribe((resp: VagaModel[])=> {
+        this.listVaga = resp
+      })
+    }
+  }
   
 }

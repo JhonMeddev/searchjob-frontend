@@ -13,13 +13,12 @@ export class ConfirmationComponent {
 
   constructor(public bsModalRef: BsModalRef) {}
 
-  close(value: boolean): void {
-    this.onClose.emit(value);
-    this.bsModalRef.hide();
-  }
-
-  // Adicione este método para evitar o problema
   onCloseClick(value: boolean): void {
     this.close(value);
+  }
+
+  private close(value: boolean): void {
+    this.onClose.emit(value);
+    this.bsModalRef.hide();
   }
 }
